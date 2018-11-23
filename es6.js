@@ -1,3 +1,5 @@
+//import Calculator from './calculator';
+
 let p=10;
 
 if(true){
@@ -79,17 +81,84 @@ class SavingsAccount extends Account{
         super(name);
     }
 
-    showInterest(){
-        console.log(this.balance * 8/100)
+    addInterest(){
+        this.deposit(10);
+        console.log(this.balance)
     }
 }
 
 var myAccount=new SavingsAccount("Varma");
 myAccount.deposit(100);
-myAccount.showBalance();
-myAccount.withDraw(10);
-myAccount.showBalance();
-myAccount.showInterest();
+// myAccount.showBalance();
+// myAccount.withDraw(10);
+// myAccount.showBalance();
+myAccount.addInterest();
+
+
+var add2=(a)=>{
+    return (b)=>{
+        return a+b;
+    }
+}
+
+function * sayHello(){
+    yield("hello");
+    yield("world")
+}
+
+var hello= sayHello();
+
+
+var a=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("calling a")
+            resolve("success")
+        },5000)
+    })
+}
+
+var b=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("calling b")
+            resolve("success")
+        },5000)
+    })
+    
+}
+
+var c=()=>{
+    console.log("calling c")
+}
+
+a()
+.then(b)
+.then(c)
+.catch((err)=>{
+    console.log("error")
+});
+
+
+//Cookies - Permenant
+
+//sessionStorage -- Temporary for Browser session
+//localStorage -- Permenant until you delete
+
+var user={
+    id:"1",
+    name:"Varma"
+}
+
+// sessionStorage.setItem("user",JSON.stringify(user))
+// sessionStorage.getItem("user");
+// sessionStorage.removeItem("user");
+
+// localStorage
+
+
+
+
 
 
 
