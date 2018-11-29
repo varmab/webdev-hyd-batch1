@@ -2,86 +2,195 @@
     <head>
         <title></title>
         <script>
-            console.log("helllo")
+            var myName="Varma";
+            var age=46;
+            var isStudent=false;
+            
+            age="Fourty Six";
+
+            var school;
+
+            age=null;
+
+            var myNumbers=[1,2,3]
+
+            var student={
+                name:"Varma",
+                age:46,
+                isStudent:false,
+                "my college":"coding sastra",
+                1:"one"
+            }
+
+            
+            console.log("Welcome to " + myName)
+
+            if(!((age>=18) && (age<=35))){
+                console.log("Not an Adult")
+            }
+            else
+            {
+                console.log("Adult")
+            }
+
+            var x=10;
+
+            if((x>0) || (x>10)){
+                console.log("is positive number")
+            }
+            else
+            {
+                console.log("is negative number")
+            }
+
+            var color="black"
+
+            if(color=="red"){
+                console.log("red")
+            }
+            else if(color=="black")
+            {
+                console.log("black")
+            }
+            else if(color=="green"){
+                console.log("green")
+            }
+            else
+            {
+                console.log("Unknown")
+            }
+
+            var k;
+
+            if(k){
+                console.log("Student")
+            }
+            else
+            {
+                console.log("teacher")
+            }
+
+            //Ternary operator
+            (k) ? console.log("Student") : console.log("teacher")
+
+            //Switch
+            switch(color){
+                case "red":
+                    console.log("Red");
+                    break;
+                case "black":
+                    console.log("black");
+                    break;
+                default:
+                    console.log("Unknow");
+            }
+
+            switch(k){
+                case 1:
+                    console.log("one");
+                    break;
+                case 2:
+                    console.log("two");
+                    break;
+                default:
+                    console.log("Unknow");
+            }
+
+            //Math.PI
+            //alert("Hello")
+            //Random number between two values
+            // Math.floor(Math.random() * (max-min))+min
+
+            //Javascript Hoisting
+
+            var total=add(1,2);
+
+            //function declaration
+            function add(a,b){
+                return a+b;
+            }
+
+            console.log("Sum of 1 and 2:" + total)
+
+            //function expression
+            var sum=function(a,b){
+                return a+b;
+            }
+
+            console.log(sum(1,5));
+
+            var myMarks=[60,45,90];
+            var myNumbers=["one","two","three"];
+
+            var myLetters=["a","b","c"];
+
+            myLetters.forEach(function(letter){
+                console.log(letter)
+            })
+
+            var movies=[
+                {
+                    title:"Bahubali",
+                    actor:"Prabhas",
+                    theaters:["X","Y","Z"]
+                },
+                {
+                    title:"Adhurs",
+                    actor:"NTR",
+                    theaters:["L","R"]
+                },
+                {
+                    title:"Kushi",
+                    actor:"Pavan Kalyan",
+                    theaters:["P"]
+                },
+            ]
+
+            //forEach
+            movies.forEach(function(movie){
+                console.log(movie.actor + " in " + movie.title)
+                movie.theaters.forEach(function(theater){
+                    console.log(theater)
+                })
+            })
+
+            var names=["Pamela","Robert","Varma","Anil"];
+
+            //Does all names starting with letter R or not?
+            var isAllRNames=names.every(function(name){
+                return name[0]=="R"
+            })
+
+            console.log(isAllRNames);
+
+            //Is any one with anil?
+            var isAnyAnil=names.some(function(name){
+                return name=="Anil";
+            })
+
+            console.log(isAnyAnil);
+
+            //Display all names with letter R exists anywhere
+            var allRNames=names.filter(function(name){
+                return name.toUpperCase().indexOf("R") != -1;
+            })
+
+            console.log(allRNames);
+
+            //Get list of actors from movies array
+
+            var actors=movies.map(function(movie){
+                return movie.actor;
+            })
+
+            console.log(actors);
+            
+
         </script>
-        <script src="advanced.js"></script>
     </head>
     <body>
-        <h1>Hello</h1>
-        <h1>Goodbye</h1>
-        <ul>
-          <li id="highlight">List Item 1</li>
-          <li class="bolded">List Item 2</li>
-          <li class="bolded">List Item 3</li>
-        </ul>
-        <p>
-            This is paragraph
-        </p>
-        <a href="http://google.com">Some site</a>
-      
-        <button>Say Hello</button>
+        <h1>Welcome to JavaScript Class</h1>
     </body>
 </html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-    
-    // var h1=document.getElementById("highlight");
-    // h1.style.color="red"
+<script src="class.js"></script>
 
-    // var li=document.getElementsByClassName("bolded");
-    // li[0].style.color="blue";
-    // li[1].style.color="green";
-    
-    // var li2=document.getElementsByTagName("li");
-    // li[0].style.color="orange";
-
-    //var li=document.querySelectorAll(".bolded")
-    //li[0].style.color="red";
-
-    // var p=document.querySelector("p");
-    // // p.textContent="Welcome to Coding Sastra";
-    // // p.innerHTML="Welcome to <b>Coding Sastra</b>"
-
-    // var a=document.querySelector("a");
-    // console.log(a.getAttribute("href"))
-    // a.setAttribute("href","http://yahoo.com")
-
-    // // var button=document.querySelector("button");
-    // // button.addEventListener("dblclick",()=>{
-    // //     alert("hello")
-    // // })
-
-    // p.addEventListener("mouseover",function(){
-    //     this.textContent="someone mouse over me"
-    // })
-
-    // p.addEventListener("mouseout",function(){
-    //     this.textContent="This is paragraph"
-    // })
-
-    // var style={
-    //     "color":"red",
-    //     "background-color":"green"
-    // }
-    // $("li").css(style);
-
-    // $("button").on('click',()=>{
-    //     $.ajax({
-    //             url: 'http://jsonplaceholder.typicode.com/posts/1',
-    //             data: {
-    //                 format: 'json'
-    //             },
-    //             error: function() {
-    //                 console.log('An error has occurred');
-    //             },
-    //             dataType: 'jsonp',
-    //             success: function(data) {
-    //                 console.log(data)
-    //             },
-    //             type: 'GET'
-    //     });
-    // })
-
-
-    
-</script>
