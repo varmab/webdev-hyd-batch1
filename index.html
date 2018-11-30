@@ -178,13 +178,126 @@
             console.log(allRNames);
 
             //Get list of actors from movies array
-
             var actors=movies.map(function(movie){
                 return movie.actor;
             })
 
             console.log(actors);
-            
+
+            //1. What is the method loop through an array
+
+            //forEach
+            //every 
+            //some
+            //map
+            //reduce
+            //filter
+
+            var marks=[45,78,35,99];
+
+            var total=0
+            marks.forEach(function(mark){
+                total+=mark;
+            })
+
+            console.log(total)
+
+            //reduce
+            var totalAll=marks.reduce(function(total,mark){
+                return total+mark;
+            })
+
+            console.log(totalAll)
+
+
+            var movies2=[
+                {
+                    title:"Bahubali",
+                    actor:"Prabhas",
+                    theaters:["X","Y","Z"]
+                },
+                {
+                    title:"Adhurs",
+                    actor:"NTR",
+                    theaters:["L","R"]
+                },
+                {
+                    title:"Kushi",
+                    actor:"Pavan Kalyan",
+                    theaters:["P"]
+                },
+            ]
+
+            // Get list of actors with comma as seperator
+            var actorsList=movies2.reduce(function(actors,movie){
+                return actors+"," + movie.actor;
+            },'');
+
+            console.log(actorsList);
+
+            //Get a pair of title and actor object like this {"Bahubali":"Prabhas","Adhurs":"NTR","Kushi":"Pavan Kalyan"}
+            var titles=movies2.reduce(function(titles,movie){
+                titles[movie.title]=movie.actor;
+                return titles;
+            },{})
+            console.log(titles)
+
+            //Get a list of theaters in  single array of all movies
+            //["X","Y","Z","L","R","P"]
+            var theatersArray=movies2.reduce(function(theaters,movie){
+                return theaters.concat(movie.theaters)
+            },[])
+
+            console.log(theatersArray);
+
+            //Loops
+            // 1. while
+            // 2. do .. while
+            // 3. for
+
+            var x=0;
+
+            while(x<10){
+                if(x==5) {
+                    break;
+                }
+                console.log(x);
+                x++;
+            }
+
+            var k=0;
+            do {
+                if(k==8) {
+                    break;
+                }
+                console.log(k);
+                k++;
+            }
+            while(k<10)
+
+            //break and continue statements
+
+            for(var i=0;i<10;i++){
+
+                if(i==5) {
+                    break;
+                }
+                console.log(i)
+            }
+
+            for(var i=10;i>0;i--){
+                if(i==10){
+                    continue;
+                }
+                console.log(i)
+            }
+
+            var firstName="Varma";
+
+            console.log(firstName.length);
+            console.log(firstName[0]);
+            console.log(firstName.charAt(1))
+            console.log(firstName[firstName.length-1]);
 
         </script>
     </head>
@@ -193,4 +306,6 @@
     </body>
 </html>
 <script src="class.js"></script>
+
+
 
